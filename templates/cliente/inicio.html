@@ -1,0 +1,76 @@
+{% extends 'base/base.html' %}
+{% load staticfiles %}
+
+
+{% block content %}
+		<div class="container" >
+
+      <!-- Jumbotron Header -->
+	      <header class="jumbotron my-4" >
+	      	
+	        <h1 class="display-3">Frutos del llano</h1>
+	        <p class="lead">Frutos del llano es una empresa en crecimiento donde la actividad comercial se ha centrado en la venta  y distribución de frutas de una la central de abastos. Ofertamos frutas de muy buena calidad a muy buenos precios. </p>
+	        <a href="shop.html" class="btn btn-primary btn-lg">Ir a comprar</a>
+	      </header>
+	      
+			<!-- Page Features -->
+			      <div class="row text-center">
+
+			        <div class="col-lg-3 col-md-6 mb-4">
+			          <div class="card">
+			            <img class="card-img-top" src="{% static 'imagenes/rojos.jpg' %}" alt="" width="200px" height="200px" >
+			            <div class="card-body">
+			              <h4 class="card-title">Frutos rojos</h4>
+			              <p class="card-text"> </p>
+			           </div>
+            				<div class="card-footer">
+			              <a href="shop.html" class="btn btn-primary">Ir a tienda</a>
+			            </div>
+			          </div>
+			        </div>
+
+			        <div class="col-lg-3 col-md-6 mb-4">
+			          <div class="card">
+			            <img class="card-img-top" src="{% static 'imagenes/tropical.jpg' %}" alt="" width="200px" height="200px" >
+			            <div class="card-body">
+			              <h4 class="card-title">Frutas tropicales</h4>
+			              <p class="card-text"> </p>
+			           </div>
+            				<div class="card-footer">
+			              <a href="shop.html" class="btn btn-primary">Ir a tienda</a>
+			            </div>
+			          </div>
+			        </div>
+
+			        <div class="col-lg-3 col-md-6 mb-4">
+			          <div class="card">
+			            <img class="card-img-top" src="{% static 'imagenes/acido.png' %}" alt="" width="200px" height="200px" >
+			            <div class="card-body">
+			              <h4 class="card-title">Frutas ácidas</h4>
+			              <p class="card-text"> </p>
+			           		</div>
+            				<div class="card-footer">
+			              <a href="shop.html" class="btn btn-primary">Ir a tienda</a>
+			            </div>
+			          </div>
+			        </div>
+
+			        <div class="col-lg-3 col-md-6 mb-4">
+			          <div class="card">
+			            <img class="card-img-top" src="{% static 'imagenes/dulces.jpg' %}" alt="" width="200px" height="200px" >
+			            <div class="card-body">
+			              <h4 class="card-title">Frutas dulces</h4>
+			              <p class="card-text"> </p>
+			           </div>
+            				<div class="card-footer">
+			              <a href="shop.html" class="btn btn-primary" >Ir a tienda</a>
+			            </div>
+			          </div>
+			        </div>
+
+			      </div>
+			      <!-- /.row -->
+
+
+	</div>
+{% endblock%}
