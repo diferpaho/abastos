@@ -1,0 +1,55 @@
+{% extends 'base/base.html' %}
+{% block extrastatic %}
+	<style type="text/css" >
+    body::-webkit-scrollbar{
+        width: 0;
+    }
+    </style>
+
+
+{% endblock %}
+{% load staticfiles %}
+
+
+
+{% block navbar %}
+{% endblock %}
+
+{% block content %}
+{% csrf_token %}
+<section class="contenedor">
+     <form class="cuadro" method="post">
+     	<div class="cabecera">
+        <img src="{% static 'imagenes\icono.png' %}" class="imagen">
+        <h1>Login </h1>    
+        </div>
+        <div class="cuerpo">
+            <!-- Username -->
+            <label>Usuario:</label>
+            <input type="text" name="cUsuario" required>
+            <!-- Password -->
+            <label>Clave:</label>
+            
+            <input type="password" name="cContraseña" required>
+            
+
+                          
+           
+			<div class="form-group">
+						<a href="#">Olvidé mi contraseña</a>
+						<br>
+						<a href="{% url 'cliente:nuevo'%}"><b>Registrarme</b></a>
+						<br>
+						<a href="{% url 'cliente:entrarA'%}">Entrar como administrador</a>
+						<br>
+						<input class="btn btn-primary" type="submit" name="Ingresar">				
+			</div>
+		</div>
+	</form>       
+</section>
+
+
+
+
+{% endblock %}		
+

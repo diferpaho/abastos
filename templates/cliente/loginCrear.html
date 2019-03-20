@@ -1,0 +1,63 @@
+{% extends 'base/base.html' %}
+
+{% load staticfiles %}
+
+
+{% block content %}
+<section class="contenedor">
+     <form class="cuadro2" method="post">
+	{% csrf_token %}
+	<br>
+	<br>
+	<div class="cuerpo" align="center">
+		<h1>Registrar</h1> 
+	{{form.as_p}}
+	{{form2.as_p}}
+
+	<!--<br>
+	
+	<div class="row">
+		<div class="col-md-8 col-md-offset-2">
+			<div class="form-group">
+				<label for="{{form.nombreUsuario.name}}">{{form.nombreUsuario.label}}</label>
+				{{form.nombreUsuario}}
+			</div>
+		</div>
+		<div class="col-md-8 col-md-offset-2">
+			<div class="form-group">
+				<label for="{{form.password.name}}">{{form.password.label}}</label>
+				{{form.password}}
+			</div>
+		</div>
+		<div class="col-md-8 col-md-offset-2">
+			<div class="form-group">
+				<label for="{{form2.nombre.name}}">{{form2.nombre.label}}</label>
+				{{form2.nombre}} 
+			</div>
+		</div>
+		<div class="col-md-8 col-md-offset-2">
+			<div class="form-group">
+				<label for="{{form2.apellido.name}}">{{form2.apellido.label}}</label>
+				{{form2.apellido}}
+			</div>
+		</div>
+		<div class="col-md-8 col-md-offset-2">
+			<div class="form-group">
+				<label for="{{form2.email.name}}">{{form2.email.label}}</label>
+				{{form2.email}}
+			</div>
+		</div>
+	</div> -->
+	
+	
+	 	</div>
+    	 <center><input type="submit" name="submit" value="guardar" /></center>
+	</form>
+</section>
+{% endblock %}
+
+
+{% block footer %}
+
+{% endblock %}	
+

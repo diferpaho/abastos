@@ -9,3 +9,12 @@ class Cliente(models.Model):
 	telefono= models.IntegerField()
 	direccion= models.TextField()
 	user= models.ForeignKey(User, null=True, blank=True, on_delete=models.CASCADE)
+
+	def __str__(self):
+		return '{} {}'.format(self.nombre, self.apellido)
+
+class Registrar(models.Model):
+	cliente= models.ForeignKey(Cliente, null=True, blank=True, on_delete=models.CASCADE)
+	nombreUsuario= models.CharField(max_length=50)
+	password= models.CharField(max_length=50)
+

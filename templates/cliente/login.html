@@ -1,2 +1,50 @@
 {% extends 'base/base.html' %}
 {% load staticfiles %}
+
+
+{% block content %}
+<section class="contenedor">
+<form class="cuadro3" method="post">
+<table class="table table-bordered">
+	<thead>
+		<tr>
+			<td>No. usuario</td>
+			<td>Usuario</td>
+			<td>Nombre</td>
+			<td>Correo</td>
+			<td>Telefono</td>
+			<td>Direccion</td>
+			<td>Acciones</td>
+
+		</tr>	
+	</thead>
+	<tbody>
+		{% if object_list %}
+		{% for registrar in object_list %}
+		<tr>
+			<td>{{registrar.id}}</td>
+			<td>{{registrar.nombreUsuario}}</td>
+			<td>{{registrar.cliente.nombre}} {{registrar.cliente.apellido}}</td>
+			<td>{{registrar.cliente.email}}</td>
+			<td>{{registrar.cliente.telefono}}</td>
+			<td>{{registrar.cliente.direccion}}</td>
+			
+
+			<td>
+				<a class="btn btn-prymary" href="{% url 'cliente:modificar' registrar.id%}">Editar</a>
+				<a class="btn btn-prymary" href="{% url 'cliente:eliminar' registrar.id %}">Eliminar</a>
+			</td>
+		</tr>
+		{% endfor %}
+		{% else %}
+		<h1>No hay registros de solicitudes</h1>
+		{% endif %}
+	</tbody>
+	</table>
+	</form>
+</section>
+	{% endblock %}		
+
+{% block footer %}
+
+{% endblock %}	

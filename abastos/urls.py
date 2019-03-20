@@ -15,12 +15,27 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-
+from apps.cliente.views import inicio, entrar
+from django.contrib.auth import views as authViews
+from django.contrib.auth.views import logout_then_login
  
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('cliente/', include('apps.cliente.urls')),
     path('factura/', include('apps.factura.urls')),
     path('producto/', include('apps.producto.urls')),
-    path('', include('apps.cliente.urls')),
+    path('', inicio,name='home'),
+    path('accounts/login/', entrar,name='entrar'),
+    path('logout/', logout_then_login,name='logout'),
+    #path('reset/password_reset', PasswordResetView.as_view(), {'template_name':'registration/password_reset_form.html', 
+    #    'email_template_name':'registration/password_reset_email.html'}, 
+    #    name='password_reset'),
+    #path('reset/password_reset_done', password_reset_done,{'template_name':'registration/password_reset_done.html'},
+    #    name='password_reset_done'),
+    #path('reset/(?P<uidb64>[0-9A-Za-z_\-]+)/(?P<token>.+)/$', password_reset_confirm,{'template_name':'registration/password_reset_confirm.html'},
+    #    name='password_reset_confirm'),
+    #path('reset/done', password_reset_complete,{'template_name':'registration/password_reset_complete.html'},
+    #    name='password_reset_complete'),
+
+    
 ]

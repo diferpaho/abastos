@@ -1,0 +1,26 @@
+{% extends 'base/base.html' %}
+{% load staticfiles %}
+
+
+{% block content %}
+<section class="contenedor">
+     <form class="cuadro2" method="post">
+	{% csrf_token %}
+	<br>
+	<br>
+	<div class="cuerpo" align="center">
+		<h1>Registrar local</h1> 
+	{{form.as_p}}
+	{{form2.as_p}}
+
+
+	</div>
+    	 <center><input type="submit" name="submit" value="guardar" /></center>
+	</form>
+</section>
+{% endblock %}
+
+
+{% block footer %}
+
+{% endblock %}	

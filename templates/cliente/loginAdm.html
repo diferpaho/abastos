@@ -1,0 +1,55 @@
+{% extends 'base/base.html' %}
+{% block extrastatic %}
+ 
+<style type="text/css" >
+    body::-webkit-scrollbar{
+        width: 0;
+    }
+    </style>
+{% endblock %}
+{% load staticfiles %}
+
+
+{% block navbar %}
+{% endblock %}
+
+{% block content %}
+
+
+<section class="contenedor">
+        <form class="cuadro" method="post">
+	<div class="cabecera">
+    <img src="{% static 'imagenes\icono2.png' %}" class="imagen">
+    <h1>Login </h1>    
+    </div>
+	<div class="cuerpo">
+	
+	{% csrf_token %}
+	
+		
+			<div class="form-group">
+				<label for="username">Usuario:</label>
+				<input class="form-control" type="text" name="username">				
+			</div>
+				
+			<div class="form-group">
+				<label for="username">Contraseña:</label>
+				<input class="form-control" type="password" name="password">				
+			</div>
+		
+			<div class="form-group">
+				
+				<input class="btn btn-primary" type="submit" name="Ingresar">				
+			</div>
+			<div class="form-group">
+			<a href="{% url 'cliente:nuevo'%}"><b>Registrarme</b></a>
+			</div>
+	</div>
+	</form>}
+ </form>       
+</section>
+
+
+
+
+{% endblock %}		

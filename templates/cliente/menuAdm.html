@@ -1,0 +1,39 @@
+{% extends 'base/base.html' %}
+{% block extrastatic %}
+    <style type="text/css" >
+    body::-webkit-scrollbar{
+        width: 0;
+    }
+    </style>
+
+
+{% endblock %}
+{% load staticfiles %}
+
+{% block navbar %}
+{% endblock %}
+
+{% block content %}
+{% csrf_token %}
+<section class="contenedor">
+     <form class="cuadro" method="post">
+     	<div class="cabecera">
+        
+        <h1>Menu</h1>    
+        </div>
+        <div class="cuerpo">
+           <a href="{% url 'cliente:listaLocales'%}" class="btn btn-primary">Administrar locales</a>
+           <a href="{% url 'cliente:login_listar'%}" class="btn btn-primary">Administrar usuarios</a>
+           <a href="{% url 'producto:productoLista'%}" class="btn btn-primary">Administrar productos</a>
+           <a href="{% url 'logout'%}" class="btn btn-primary">Salir </a>
+           <br>
+           <h2>Administrador</h2> 
+		</div>
+	</form>       
+</section>
+
+
+
+
+{% endblock %}		
+

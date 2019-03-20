@@ -7,9 +7,10 @@
 <section class="contenedor">
      <form class="cuadro2" method="post">
      	<center>
-     	<h1>Mapa y locales</h1>
+     	
      	<div class="cabecera" align="center">
-        <img src="{% static 'imagenes\mapa.jpg' %}"  width="700" height="500">
+        <h1>Locales</h1>
+        <a class="btn btn-prymary" href="{% url 'cliente:localCrear'%}">Agregar local</a>
         </div>
         </center>
         <div class="cuerpo">
@@ -20,6 +21,7 @@
 					<td>nombre</td>
 					<td>ubicacion</td>
 					<td>administrador</td>
+					<td>acciones</td>
 				
 				</tr>	
 			</thead>
@@ -31,7 +33,10 @@
 			<td>{{Local.nombre}}</td>
 			<td>{{Local.ubicacion}}</td>
 			<td>{{Local.administrador}}</td>
-		
+			<td>
+				<a class="btn btn-prymary" href="{% url 'cliente:localModificar' Local.id%}">Editar</a>
+				<a class="btn btn-prymary" href="{% url 'cliente:localEliminar' Local.id%}">Eliminar</a>
+			</td>
 		</tr>
 		{% endfor %}
 		{% else %}

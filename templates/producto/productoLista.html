@@ -7,31 +7,40 @@
 <section class="contenedor">
      <form class="cuadro2" method="post">
      	<center>
-     	<h1>Mapa y locales</h1>
+     	
      	<div class="cabecera" align="center">
-        <img src="{% static 'imagenes\mapa.jpg' %}"  width="700" height="500">
+        <h1>Locales</h1>
+        <a class="btn btn-prymary" href="{% url 'producto:productoCrear'%}">Agregar Producto</a>
         </div>
         </center>
         <div class="cuerpo">
         <table class="table table-bordered">
 			<thead>
 				<tr>
-					<td>No. local</td>
+					<td>No. producto</td>
 					<td>nombre</td>
-					<td>ubicacion</td>
-					<td>administrador</td>
+					<td>descripcion</td>
+					<td>precio</td>
+					<td>cantidad</td>
+					<td>local</td>
+					<td>acciones</td>
 				
 				</tr>	
 			</thead>
 		<tbody>
 		{% if object_list %}
-		{% for Local in object_list %}
+		{% for Producto in object_list %}
 		<tr>
-			<td>{{Local.id}}</td>
-			<td>{{Local.nombre}}</td>
-			<td>{{Local.ubicacion}}</td>
-			<td>{{Local.administrador}}</td>
-		
+			<td>{{Producto.id}}</td>
+			<td>{{Producto.nombre}}</td>
+			<td>{{Producto.descripcion}}</td>
+			<td>{{Producto.precio}}</td>
+			<td>{{Producto.cantidad}}</td>
+			<td>{{Producto.Local.nombre}}</td>
+			<td>
+				<a class="btn btn-prymary" href="#">Editar</a>
+				<a class="btn btn-prymary" href="#">Eliminar</a>
+			</td>
 		</tr>
 		{% endfor %}
 		{% else %}
